@@ -21,7 +21,9 @@ getgenv().Paragon = {
             Enabled = true,
             AirPart = 'Head',
             SmoothingMultiplierX = 2,
-            SmoothingMultiplierY = 1.5
+            SmoothingMultiplierY = 1.5,
+            ShakeX = 15,
+            ShakeY = 15
         },
         Shake = {
             Enabled = false,
@@ -89,6 +91,13 @@ getgenv().Paragon = {
                 '[Tactical-Shotgun] - 9321$'
             }
         },
+        Noclip = {
+            Enabled = false,
+            Keybind = 'T',
+            Type = 'Teleport', -- // Teleport, Switch
+            Tool1 = '[Tactical-Shotgun]',
+            Tool2 = '[Shotgun]'
+        },
         Auto360 = {
             Enabled = false,
             Keybind = 'X',
@@ -112,7 +121,8 @@ getgenv().Paragon = {
         Friend = false,
         Forcefield = false,
         FirstPerson = true, -- // AimAssist Check, Only aims when in first person
-        ThirdPerson = true -- // AimAssist Check, Only aims when in third person
+        ThirdPerson = false, -- // AimAssist Check, Only aims when in third person
+        Gun = true -- // AimAssist Check, Only aims when a gun is equipped
     },
     ['Functions'] = {
         UnlockOnDeath = true,
