@@ -93,10 +93,9 @@ getgenv().Paragon = {
         },
         Noclip = {
             Enabled = false,
-            Keybind = 'T',
-            Type = 'Teleport', -- // Teleport, Switch
-            Tool1 = '[Tactical-Shotgun]',
-            Tool2 = '[Shotgun]'
+            Keybind = {'T', 'Single'}, -- // Single, Hold (Only works for tool)
+            Type = 'Teleport', -- // Teleport, Tool
+            Tool = '[Tactical-Shotgun]'
         },
         Auto360 = {
             Enabled = false,
