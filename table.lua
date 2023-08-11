@@ -2,14 +2,10 @@ getgenv().Paragon = {
     ['AimAssist'] = {
         Enabled = true,
         Keybind = {'Q', 'Hold'}, -- // Hold, Toggle
+        Mode = 'Camera', -- Camera, Mouse (UWP doesn't support mousemoverel)
         StickyAim = true,
         HitPart = 'HumanoidRootPart',
         DeadZone = false,
-        Prediction = {
-            Enabled = true,
-            PingBased = false,
-            Value = 0.1230
-        },
         Humanization = {
             Sensitivity = 2,
             FirstPersonSmoothingX = 0.0549,
@@ -36,12 +32,7 @@ getgenv().Paragon = {
         Keybind = {'P', 'Toggle'}, -- // Hold, Toggle
         HitParts = {'Head', 'HumanoidRootPart'}
         IgnoreTable = true,
-        NearestPoint = true,
-        Prediction = {
-            Enabled = true,
-            PingBased = false,
-            Value = 0.119
-        }
+        NearestPoint = true
     },
     ['FOVs'] = {
         AimAssist = {
@@ -71,6 +62,46 @@ getgenv().Paragon = {
             Filled = false
         }
     },
+    ['Prediction'] = {
+        AimAssist = {
+            Enabled = false,
+            Prediction = 0.125251
+            AutoPrediction = {
+                Enabled = false, -- Overrides Prediction value above
+                RangeCoefficient = 0,
+                AdditionalInterval = 1 / 60,
+                Precision = 5,
+            }
+        },
+        BulletRedirection = {
+            Enabled = false,
+            Prediction = 0.125251
+            AutoPrediction = {
+                Enabled = false, -- Overrides Prediction value above
+                RangeCoefficient = 0,
+                AdditionalInterval = 1 / 60,
+                Precision = 5,
+            }
+        }
+    },
+    ['Checks'] = {
+        Visible = true,
+        Wall = true,
+        Knocked = true,
+        Grabbed = true,
+        Crew = false,
+        Friend = false,
+        Forcefield = false,
+        DisableOutsideFOV = false, -- // AimAssist Check, Only aims when target is inside fov circle
+        FirstPerson = true, -- // AimAssist Check, Only aims when in first person
+        ThirdPerson = false, -- // AimAssist Check, Only aims when in third person
+        Gun = true -- // AimAssist Check, Only aims when a gun is equipped
+    },
+    ['Functions'] = {
+        UnlockOnDeath = true,
+        UnlockOnLocalDeath = true,
+        UnlockOutsideFOV = false
+    },
     ['Misc'] = {
         Macro = {
             Enabled = false,
@@ -85,7 +116,7 @@ getgenv().Paragon = {
         },
         BuyAura = {
             Enabled = true,
-            Keybind = {'V', 'Single'}, -- // Single, Hold
+            Keybind = {'V', 'Tap'}, -- // Tap, Hold
             WhitelistedShops = {
                 '[Revolver] - 1382$',
                 '[Tactical-Shotgun] - 9321$'
@@ -106,27 +137,6 @@ getgenv().Paragon = {
             MuteBoombox = true,
             AutoLowGFX = true
         }
-    }
-    ['PingBasedPredictions'] = {
-        p0_10 = 0.,
-        p10_20 = 0.
-    },
-    ['Checks'] = {
-        Visible = true,
-        Wall = true,
-        Knocked = true,
-        Grabbed = true,
-        Crew = false,
-        Friend = false,
-        Forcefield = false,
-        FirstPerson = true, -- // AimAssist Check, Only aims when in first person
-        ThirdPerson = false, -- // AimAssist Check, Only aims when in third person
-        Gun = true -- // AimAssist Check, Only aims when a gun is equipped
-    },
-    ['Functions'] = {
-        UnlockOnDeath = true,
-        UnlockOnLocalDeath = true,
-        UnlockOutsideFOV = false
     },
     ['Safety'] = {
         LeaveOnModJoin = {
